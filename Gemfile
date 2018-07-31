@@ -50,7 +50,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda'
   gem 'faker'
-  gem 'factory_girl_rails'
+  # gem 'factory_girl_rails' # factory_girl is end-of-life and replaced by factory_bot
+  gem 'factory_bot_rails'
   
 end
 
