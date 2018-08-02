@@ -1,6 +1,6 @@
 class ListSerializer < ActiveModel::Serializer
 
-  attributes :id, :name, :private, :user_id,
+  attributes :id, :name, :private,
 
   def name
     object.name
@@ -9,9 +9,4 @@ class ListSerializer < ActiveModel::Serializer
   def private
     object.private
   end
-
-  user_id
-    object.user_id
-  end
 end
-

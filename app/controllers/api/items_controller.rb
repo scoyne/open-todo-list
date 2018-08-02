@@ -1,13 +1,9 @@
 class Api::ItemsController < ApiController
     before_action :authenticated?
 
-    def index
-        items = List.all
-        render json: items, each_searilizer: ItemSerializer
-    end
-
     def create
-        item = Item.new(item_params)
+        list = List.find(params[:list_id])
+        item = list.items.create(item_params)
         if item.save
             render json: item
         else
@@ -16,7 +12,7 @@ class Api::ItemsController < ApiController
     end
     
     private
-    def user_params
+    def item_params
         params.require(:item).permit(:entry)
     end
 end
